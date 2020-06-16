@@ -5,7 +5,7 @@ from user.models import UserProfile
 
 
 class Food (models.Model):
-    username = models.ForeignKey(UserProfile)
+    foodie = models.ForeignKey(UserProfile)
     title = models.CharField('文章标题',max_length=50)
     info = models.CharField('文章简介',max_length=90)
     content = models.TextField('文章内容')

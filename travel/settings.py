@@ -57,7 +57,7 @@ ROOT_URLCONF = 'travel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,6 +121,9 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS= (os.path.join(
+    BASE_DIR,'static'
+),)
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -148,8 +151,15 @@ CORS_ALLOW_HEADERS = (
     'x-requested-with',
 )
 
+APPEND_SLASH = False
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+
 # CORS_PREFLIGHT_MAX_AGE = 86400
 #
 # CORS_EXPOSE_HEADS = []
 #
 # CORS_ALLOW_CREDENTIALS = False
+
